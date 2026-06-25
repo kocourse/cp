@@ -3,24 +3,40 @@ body {
     font-family: Arial;
 }
 
+/* 1. 新增外層容器，使其內部的子元素水平排列 */
+.container {
+    display: flex;
+    min-height: 100vh; /* 讓容器高度至少與視窗一樣高 */
+}
+
+/* 2. 固定側邊欄寬度 */
 .sidebar {
-  background: #1f2937;
-  color: #f9fafb;
+    width: 220px;      /* 設定側邊欄寬度 */
+    background: #1f2937;
+    color: #f9fafb;
+    padding: 20px;     /* 加上內邊距，讓文字不貼邊，更美觀 */
+    box-sizing: border-box; /* 確保 padding 不會撐大寬度 */
 }
+
 .sidebar h3 {
-  color: white;
+    color: white;
+    margin-top: 0;     /* 清除預設上邊距 */
 }
+
 .sidebar a {
-  color: #f9fafb;
-  display: block;
-  padding: 6px 0;
+    color: #f9fafb;
+    display: block;
+    padding: 8px 0;    /* 稍微加大點擊範圍 */
+    text-decoration: none; /* 移除超連結下底線 */
 }
 
 .sidebar a:hover {
-  color: #60a5fa;
+    color: #60a5fa;
 }
 
+/* 3. 主要內容區自動填滿剩餘寬度 */
 .content {
-    margin-left: 220px;
+    flex: 1;           /* 自動延伸填滿右側剩餘空間 */
     padding: 20px;
+    box-sizing: border-box;
 }
