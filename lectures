@@ -1,4 +1,12 @@
 <html>
+<head>
+<meta charset="UTF-8">
+
+<title>課程講義</title>
+
+<link rel="stylesheet" href="assets/style.css">
+
+</head>
 <body>
 <table xmlns="http://www.w3.org/1999/xhtml" border="2" bordercolor="green" data-table-local-id="table-2">
   <tbody>
