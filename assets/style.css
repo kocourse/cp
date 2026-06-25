@@ -7,7 +7,9 @@ body {
   background: #1f2937;
   color: #f9fafb;
 }
-
+.sidebar h3 {
+  color: white;
+}
 .sidebar a {
   color: #f9fafb;
   display: block;
