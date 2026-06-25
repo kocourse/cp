@@ -40,3 +40,15 @@ body {
     padding: 20px;
     box-sizing: border-box;
 }
+
+.content {
+    flex: 1;
+    padding: 0; /* 移除原本的 padding，讓 iframe 填滿 */
+    height: 100vh; /* 讓右側高度與視窗同高 */
+}
+
+.content-frame {
+    width: 100%;
+    height: 100%;
+    border: none; /* 隱藏內嵌網頁的邊框 */
+}
