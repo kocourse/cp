@@ -5,7 +5,70 @@
 <title>計算物理</title>
 
 <link rel="stylesheet" href="assets/style.css">
+<style>
+/* ==========================================
+   主網頁排版設定（控制側邊欄與右側框架）
+   ========================================== */
+/* 確保整個大瀏覽器視窗不會出現雙重捲軸 */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial;
+    overflow: hidden; 
+}
 
+/* 外層 Flexbox 容器 */
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* 左側邊欄 */
+.sidebar {
+    width: 220px;
+    background: #1f2937;
+    color: #f9fafb;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto; /* 如果選單太長，左邊自己出現捲軸 */
+}
+
+.sidebar h3 {
+    color: white;
+    margin-top: 0;
+}
+
+.sidebar a {
+    color: #f9fafb;
+    display: block;
+    padding: 8px 0;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    color: #60a5fa;
+}
+
+/* 右側內容容器 */
+.content {
+    flex: 1;
+    height: 100%;     /* 確保容器 100% 填滿剩餘高度 */
+    overflow: hidden; /* 防止外層重疊捲軸 */
+    padding: 0;
+    margin: 0;
+}
+
+/* 內嵌視窗本身 */
+.content-frame {
+    width: 100%;
+    height: 100% !important; /* 強制 iframe 垂直拉滿到螢幕最底部 */
+    border: none;
+    display: block;
+    overflow: auto;          /* 讓內嵌網頁自己長出右側的標準捲軸 */
+}
+</style>
 </head>
 
 <body>
