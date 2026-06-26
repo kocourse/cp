@@ -1,6 +1,8 @@
 body {
-    margin: 0;
     font-family: Arial;
+    padding-left: 30px;
+    padding-top: 20px;
+    padding-right: 20px;
 }
 
 /* 1. 新增外層容器，使其內部的子元素水平排列 */
