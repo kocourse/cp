@@ -1,8 +1,13 @@
 body {
     font-family: Arial;
-    padding-left: 30px;
-    padding-top: 20px;
-    padding-right: 20px;
+    padding-left: 40px !important;  /* 強制推開左邊界 */
+    padding-top: 25px;              /* 讓頂部有舒適的留白 */
+    padding-right: 20px;            /* 右邊留一點安全距離 */
+}
+
+/*修正舊式表格強制貼邊的問題 */
+table {
+    margin-left: 0;                 /* 讓它順應 body 的 padding */
 }
 
 /* 1. 新增外層容器，使其內部的子元素水平排列 */
