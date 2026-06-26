@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding-left: 40px !important;  /* 舒適的左側留白 */
-    padding-top: 15px;              /* 舒適的頂部留白 */
+    padding-top: 0px;              /* 舒適的頂部留白 */
     padding-right: 40px !important; /* 💡 右側也留白，防止捲軸遮擋內容 */
     box-sizing: border-box !important; /* 確保內邊距不撐爆網頁總寬度 */
 }
