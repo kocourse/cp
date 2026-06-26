@@ -1,17 +1,14 @@
-/* ==========================================
-  右側講義網頁設定（控制表格、文字留白）
-   ========================================== */
-
+/* 專門控制右側講義網頁的留白（assets/style.css） */
 body {
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     margin: 0;
-    padding-left: 40px !important;  /* 漂亮的左邊留白 */
-    padding-top: 25px;              /* 漂亮的頂部留白 */
-    padding-right: 40px;            /* 右邊留白 */
-    box-sizing: border-box !important; /* 防止寬度被 padding 擠爆 */
+    padding-left: 40px !important;  /* 舒適的左側留白 */
+    padding-top: 25px;              /* 舒適的頂部留白 */
+    padding-right: 40px !important; /* 💡 右側也留白，防止捲軸遮擋內容 */
+    box-sizing: border-box !important; /* 確保內邊距不撐爆網頁總寬度 */
 }
 
 table {
     margin-left: 0;
-    max-width: 100%; /* 確保表格乖乖待在畫面內，不超出右邊界 */
+    max-width: 100%; /* 表格最大寬度不超過畫面 */
 }
