@@ -34,21 +34,20 @@ body {
     color: #60a5fa;
 }
 
-/* 3. 主要內容區自動填滿剩餘寬度 */
+/* 右側主要內容區塊的設定 */
 .content {
-    flex: 1;           /* 自動延伸填滿右側剩餘空間 */
-    padding: 20px;
-    box-sizing: border-box;
+    flex: 1;            /* 自動填滿右側剩餘寬度 */
+    height: 100vh;      /* 讓這個區塊的高度等於瀏覽器視窗的高度 */
+    padding: 0;         /* 清除內邊距，讓 iframe 可以無縫填滿 */
+    overflow: hidden;   /* 讓外層不出現雙重捲軸，由內部的 iframe 來捲動 */
 }
 
-.content {
-    flex: 1;
-    padding: 0; /* 移除原本的 padding，讓 iframe 填滿 */
-    height: 100vh; /* 讓右側高度與視窗同高 */
-}
-
+/* 2. 針對 iframe 本身的設定（最關鍵） */
 .content-frame {
-    width: 100%;
-    height: 100%;
-    border: none; /* 隱藏內嵌網頁的邊框 */
+    width: 100%;        /* 寬度 100% 填滿右側 */
+    height: 100%;       /* 高度 100% 填滿右側 */
+    border: none;       /* 移除 iframe 預設的醜邊框 */
+    
+    /* 確保當內容超出時，允許出現捲軸讓使用者往下或往右看 */
+    overflow: auto;     
 }
