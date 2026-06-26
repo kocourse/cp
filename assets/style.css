@@ -1,63 +1,17 @@
+/* ==========================================
+  右側講義網頁設定（控制表格、文字留白）
+   ========================================== */
+
 body {
     font-family: Arial;
-    padding-left: 40px !important;  /* 強制推開左邊界 */
-    padding-top: 25px;              /* 讓頂部有舒適的留白 */
-    padding-right: 20px;            /* 右邊留一點安全距離 */
-    /* 關鍵核心：告訴瀏覽器寬度計算要扣除 padding，才不會把表格擠出螢幕外 */
-    box-sizing: border-box !important;
+    margin: 0;
+    padding-left: 40px !important;  /* 漂亮的左邊留白 */
+    padding-top: 25px;              /* 漂亮的頂部留白 */
+    padding-right: 40px;            /* 右邊留白 */
+    box-sizing: border-box !important; /* 防止寬度被 padding 擠爆 */
 }
 
-/*修正舊式表格強制貼邊的問題 */
 table {
-    margin-left: 0;                 /* 讓它順應 body 的 padding */
-    /* 確保表格的最大寬度不會超過可視範圍（100% 減去左右邊距） */
-    max-width: 100%;
-}
-
-/* 1. 新增外層容器，使其內部的子元素水平排列 */
-.container {
-    display: flex;
-    min-height: 100vh; /* 讓容器高度至少與視窗一樣高 */
-}
-
-/* 2. 固定側邊欄寬度 */
-.sidebar {
-    width: 220px;      /* 設定側邊欄寬度 */
-    background: #1f2937;
-    color: #f9fafb;
-    padding: 20px;     /* 加上內邊距，讓文字不貼邊，更美觀 */
-    box-sizing: border-box; /* 確保 padding 不會撐大寬度 */
-}
-
-.sidebar h3 {
-    color: white;
-    margin-top: 0;     /* 清除預設上邊距 */
-}
-
-.sidebar a {
-    color: #f9fafb;
-    display: block;
-    padding: 8px 0;    /* 稍微加大點擊範圍 */
-    text-decoration: none; /* 移除超連結下底線 */
-}
-
-.sidebar a:hover {
-    color: #60a5fa;
-}
-
-/* 右側主要內容區塊的設定 */
-.content {
-    flex: 1;            /* 自動填滿右側剩餘寬度 */
-    height: auto; /* 讓高度自動延伸 */
-    padding: 0;         /* 清除內邊距，讓 iframe 可以無縫填滿 */
-    overflow: hidden;   /* 讓外層不出現雙重捲軸，由內部的 iframe 來捲動 */
-}
-
-/* 2. 針對 iframe 本身的設定（最關鍵） */
-.content-frame {
-    width: 100%;        /* 寬度 100% 填滿右側 */
-    border: none;       /* 移除 iframe 預設的醜邊框 */
-    
-    /* 確保當內容超出時，允許出現捲軸讓使用者往下或往右看 */
-    overflow: hidden; /* 既然高度自動適應了，就把 iframe 自己的捲軸隱藏 */
+    margin-left: 0;
+    max-width: 100%; /* 確保表格乖乖待在畫面內，不超出右邊界 */
 }
