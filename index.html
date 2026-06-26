@@ -5,70 +5,57 @@
 <title>計算物理</title>
 
 <link rel="stylesheet" href="assets/style.css">
-<style>
-/* ==========================================
-   主網頁排版設定（控制側邊欄與右側框架）
-   ========================================== */
-/* 確保整個大瀏覽器視窗不會出現雙重捲軸 */
-html, body {
-    height: 100%;
-    margin: 0;
-    font-family: Arial;
-    overflow: hidden; 
-}
+    <style>
+    /* 1. 嚴格鎖定整個瀏覽器視窗，不允許大視窗自己出現雙重捲軸 */
+    html, body {
+        height: 100% !important;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        overflow: hidden; 
+    }
 
-/* 外層 Flexbox 容器 */
-.container {
-    display: flex;
-    height: 100vh;
-    width: 100vw;
-}
+    /* 2. 外層 Flex 容器，寬高嚴格等於一整個螢幕 */
+    .container {
+        display: flex;
+        height: 100vh !important;
+        width: 100vw;
+        overflow: hidden;
+    }
 
-/* 左側邊欄 */
-.sidebar {
-    width: 220px;
-    background: #1f2937;
-    color: #f9fafb;
-    height: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-    overflow-y: auto; /* 如果選單太長，左邊自己出現捲軸 */
-}
+    /* 3. 左側邊欄設定 */
+    .sidebar {
+        width: 220px;
+        background: #1f2937;
+        color: #f9fafb;
+        height: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        overflow-y: auto; /* 如果選單太長，左邊可以自己獨立滾動 */
+    }
 
-.sidebar h3 {
-    color: white;
-    margin-top: 0;
-}
+    .sidebar h3 { color: white; margin-top: 0; }
+    .sidebar a { color: #f9fafb; display: block; padding: 8px 0; text-decoration: none; }
+    .sidebar a:hover { color: #60a5fa; }
+    
+    /* 4. 右側內容容器：高度必須鎖死在 100% */
+    .content {
+        flex: 1;
+        height: 100% !important;
+        overflow: hidden; /* 防止這裡偷跑出捲軸 */
+        padding: 0;
+        margin: 0;
+    }
 
-.sidebar a {
-    color: #f9fafb;
-    display: block;
-    padding: 8px 0;
-    text-decoration: none;
-}
-
-.sidebar a:hover {
-    color: #60a5fa;
-}
-
-/* 右側內容容器 */
-.content {
-    flex: 1;
-    height: 100%;     /* 確保容器 100% 填滿剩餘高度 */
-    overflow: hidden; /* 防止外層重疊捲軸 */
-    padding: 0;
-    margin: 0;
-}
-
-/* 內嵌視窗本身 */
-.content-frame {
-    width: 100%;
-    height: 100% !important; /* 強制 iframe 垂直拉滿到螢幕最底部 */
-    border: none;
-    display: block;
-    overflow: auto;          /* 讓內嵌網頁自己長出右側的標準捲軸 */
-}
-</style>
+    /* 5. 內嵌視窗本身：強制頂滿，並自動產生最右邊的網頁捲軸 */
+    .content-frame {
+        width: 100%;
+        height: 100% !important; /* 強制把 iframe 拉高到最底部 */
+        border: none;
+        display: block;
+        overflow: auto !important; /* 當內容太長時，自動長出捲軸 */
+    }
+    </style>
 </head>
 
 <body>
